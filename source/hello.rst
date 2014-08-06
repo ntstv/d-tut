@@ -2,20 +2,19 @@
 Hello World
 ===========
 
-Syntactically, D looks very much like C/C++/C#/Java.
-There are the keywords like
+Синтаксис D очень похож на синтаксис C/C++/C#/Java.
+Такие ключевые слова как
 ``if``, ``while``, ``class``, ``struct``, ``int``, ``double``, ``private``
-with unsurprising semantics.
-Here is the canonical Hello World application.
+обладают обычной семантикой.
+Каноничное Hello World приложение.
 
 .. literalinclude:: ../examplecode/helloworld.d
    :language: d
 
-The reason to start with this,
-is to test the build setup.
-`Download and install the dmd compiler <http://dlang.org/download.html>`_.
-Put the code above into a file called ``hello.d``.
-Then compile and execute.
+Начнем с него, чтобы проверим систему сборки.
+`Скачайте и установите dmd <http://dlang.org/download.html>`_.
+Создайте файл ``hello.d`` и запишите в него этот код.
+Затем скомпилируйте и запустите.
 
 .. code-block:: sh
 
@@ -23,32 +22,32 @@ Then compile and execute.
    $ ./hello
    Hello World!
 
-If you cannot get this to run,
-you should ask for help
-at the `D Learn Forum <http://forum.dlang.org/group/digitalmars.D.learn>`_
-or in the ``#d`` IRC channel on Freenode.
+Если у вас не получается запустить его,
+вы можете обратиться за помощью на форум
+`D Learn Forum <http://forum.dlang.org/group/digitalmars.D.learn>`_
+или спросить в ``#d`` IRC channel на Freenode.
 
-Convenience
+RDMD
 -----------
 
-For a more convenient interface,
-the ``rdmd`` wrapper allows to compile-and-execute directly.
+Для большего комфорта существует,
+``rdmd`` обертка, которая сразу компилирует и запускает.
 
 .. code-block:: sh
 
    $ rdmd hello.d
    Hello World!
 
-The nice fact about ``rdmd`` is that it finds additional files automatically
-and compiles them in,
-whereas ``dmd`` only compiles the arguments.
-Hence, ``rdmd`` serves as a simplistic build tool,
-such that you might not even need something like a Makefile.
+Прекрасным фактом ``rdmd`` является то, что он автоматически находит
+дополнительные файлы и компилирует их, в то время как ``dmd`` только
+компилирует файлы, переданные ей в аргументах.
+Так как ``rdmd`` служит простым сборочным инструментом, вам может и
+не понадобиться пользоваться чем-то вроде Makefile.
 
-The compiler is quite fast,
-so it might feel like using a scripting language.
-You could even put the invocation into the file as a shebang on UNIX
-and use D for small scripts.
+Компиляция происходит быстро,
+и у вас появляется чувство, будто вы пользуетесь скриптовым языком.
+Можно даже создавать файл наподобие .sh для UNIX, чтобы использовать D
+для небольших скриптов.
 
 .. code-block:: sh
 
