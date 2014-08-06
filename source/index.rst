@@ -1,54 +1,42 @@
 
-Pragmatic D Tutorial
+Прагматичное пособие по D
 ====================
 
-This is a pragmatic introduction to the
-`D Programming Language <http://dlang.org/>`_.
+Вступление к прагматичному пособию по 
+`языку программирования D <http://dlang.org/>`_.
 
-Audience
+Ты
 --------
 
-While the goal is to be generic,
-there are a few assumptions about you, the reader.
+Считается, что ты умеешь
 
-* You can program already.
-  This is not a general tutorial to learn programming.
-  You should know the basics like
-  variables, if-statements, pointers and functions.
+* программировать (данное пособие не учит основам программирования, 
+  ты должен знать что такое переменная, условный оператор, указатель и функция),
 
-* You can use a command line interface.
-  This tutorial covers compilation from raw compiler invocations.
-  Using an IDE would hide this build process.
-  Since I am using Linux,
-  examples will assume a bash shell,
-  which is the default on all major distributions (including BSD and OS X).
+* пользоваться командной строкой (мы будем пользоваться компилятором из нее;
+  IDE скрывает этот процесс)
 
-Scope
+О чем это пособие
 -----
 
-This tutorial does not explore deeply into the syntax and semantics of D
-nor does it try to cover every feature.
-Since D is a large language,
-it does not make sense to learn everything,
-before you start using it.
-Instead this tries to provide pragmatic information
-to enable you to start coding ASAP.
-For details,
-links are provided for further study.
+Данное пособие не вдается глубоко в синтаксис и семантику D
+и даже не пытается рассказать о каждой его особенности.
+Так как D серьезный язык, нет смысла учить все подряд перед тем как им пользоваться.
+Вместо этого мы попытаемся обо всем рассказать так,
+чтобы ты смог начать на нем программировать как можно скорее.
+Подробнее смотри ссылки ниже.
 
-D is multi-paradigm
-and thus suited for procedural, object-oriented,
-functional, and generic programming.
-However, this tutorial is not a guide on design,
-when to use what paradigm,
-therefore it does not cover these aspects.
+D мульти-парадигменный язык и поэтому годится для
+процедурного, объектно-ориентированного, функционального и общего программирования.
+Однако данное пособие не является инструкцией где и какую парадигму использовать,
+потому что не учитывает эти аспекты.
 
 .. seealso::
 
    `Feature List of D <http://dlang.org/comparison.html>`_,
    `Language Reference <http://dlang.org/language-reference.html>`_
 
-Contents
+Содержание
 --------
 
 .. toctree::
