@@ -1,5 +1,5 @@
 Остальные языки программирования
-===============
+================================
 
 Считается что вы уже умеете программировать,
 т.е пришли в D из другого языка.
@@ -21,9 +21,9 @@ D в качестве классного C компилятора.
 возможны, трудно реализуемы) в C. Например, обертку для переполнения int'ов
 (integer wraparound), что сейчас практически любая архитектура умеет.
 
-Почему вы должны предпочти D? Мета программирование в D добавляет высоко-
-уровневые абстракции, а значит уменьшает размер исходного кода. В D гораздо
-меньше подводных камней, улучшенная и более безопасная типизация, мало
+Почему вы должны предпочти D? Мета программирование в D добавляет
+высокоуровневые абстракции, а значит уменьшает размер исходного кода. В D
+гораздо меньше подводных камней, улучшенная и более безопасная типизация, мало
 непредвиденного поведения и автоматическое управление памятью.
 
 Java программисту
@@ -32,10 +32,9 @@ Java программисту
 В D есть классы, интерфейсы, модули, пакеты и встроенный сборщик мусора.
 В D вы освоитесь очень быстро и почувствуете себя как дома. 
 Вместо Java шаблонов есть D шаблоны.
-
  
-Почему вы должны предпочти D? Мета программирование в D добавляет высоко-
-уровневые абстракции, а значит уменьшает размер исходного кода. Для
+Почему вы должны предпочти D? Мета программирование в D добавляет
+высокоуровневые абстракции, а значит уменьшает размер исходного кода. Для
 чувствительных к ЦПУ или к памяти задач, когда они являются узким местом в
 системе, D дает куда больше контроля и свободы действий для оптимизации.
 
@@ -59,108 +58,99 @@ D не обременен полной C подобной совместимос
 C# программисту
 ------------------
 
-Все очень похоже но немного по другому.
-Почувствуете себя как дома, после того как привыкните что сходные вещи делаются
+Все очень похоже но немного другое.
+Почувствуете себя как дома, после того как привыкните тому,что сходные вещи делаются
 немного по другому.
 Вместо расширения синтаксиса, типа LINQ,
 D предоставляет множество сходных механизмов из стандартной библиотеки.
-Вместо ``using``, в D есть защиты видимости.
+Вместо ``using``, в D есть разграничение областей видимости.
 
 Почему вы должны предпочти D? D не нужна виртуальная машина,
-поэтому он годится для встроенных задач.
+поэтому он годится для встраиваемых задач.
 
 Node.js программисту
 -----------------------
 
-Syntactically, D looks familiar.
-Note though, Javascripts ``function`` is ``delegate`` in D,
-and Ds ``function`` is a lightweight variant without state.
-D is statically typed,
-but keeps the boilerplate low.
-Here is `a Rosettacode example <http://rosettacode.org/wiki/Look-and-say_sequence#D>`_,
-which shows a D program can be short and concise
-or highly optimized.
+Синтаксически D и JS родственники.
+Интересно, что JS ``function`` это ``delegate`` в D.
+В D статическая типизация с минимальными стереотипами.
+Вот `Rosettacode пример <http://rosettacode.org/wiki/Look-and-say_sequence#D>`_,
+показывающий, что D программы могут быть короткими и ясными, или высоко оптимизированными.
 
-Why would you prefer D?
-If CPU or memory is a bottleneck,
-D gives you much more control and room for optimization.
-Look at `Vibe.d <http://vibed.org/>`_
-"for easily building fast, scalable network applications".
-This D framework is
-"lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices."
+Почему вы должны предпочти D?
+В задачах, где ЦПУ узкое место, D дает куда больше контроля и свободы действий для оптимизации.
+Присмотритесь к `Vibe.d <http://vibed.org/>`_
+"для создания простых, масштабируемых сетевых приложений."
+Этот фреймворк
+"лекговесный и эффективный, идеально подходит для насыщенных данными приложений, работающими на распределенных устройствах".
 
-For Clojure Programmers
+Clojure программисту
 -----------------------
 
-D is no Lisp.
-However, its meta programming is equally powerful and nearly as easy as Lisp macros.
-D supports immutable data structures,
-although the standard library is not that rich yet.
-D is natively compiled and does not run on the JVM.
+D и Lisp совсем разные, однако
+мета программирование D равноценно по силе и простоте макросам в Lisp.
+D поддерживает ``immutable`` типы данных, также стандартная библиотека немного
+скуднее.
+D компилируется в бинарный код, для которого не нужна виртуальная машина.
 
-Why would you prefer D?
-If CPU or memory is a bottleneck,
-D gives you much more control and room for optimization.
-The richer syntax of D might be more intuitive than Lisp expressions.
+Почему вы должны предпочти D?
+В задачах, где ЦПУ узкое место, D дает куда больше контроля и свободы действий для оптимизации.
+Богатый синтаксис D должен быть интуитивно понятен в сравнении с Lisp.
 
-For Scala Programmers
+Scala программисту
 ---------------------
 
-Like Scala,
-D is multi-paradigm and combines object-oriented with functional concepts.
-You can "construct elegant class hierarchies for maximum code reuse and extensibility, implement their behavior using higher-order functions" in D as well.
+Как и Scala,
+D мульти-парадигменный язык и сочетает объектно-ориентированный подход с функциональным.
+Можно легко "создавать элегантную иерархию классов с максимальным повторным использованием кода и расширяемостью, а их поведение
+определять с помощью высоко-уровневых функций".
 
-Why would you prefer D?
-If CPU or memory is a bottleneck,
-D gives you much more control and room for optimization.
-Compiling D is much faster
-and the speed of code-compile-test iterations is important for productivity.
+Почему вы должны предпочти D?
+В задачах, где ЦПУ узкое место, D дает куда больше контроля и свободы действий для оптимизации.
+Компиляции в D в разы быстрее (особенно на Linux) и скорость проверки тестов кода важна для продуктивности.
 
-For Go Programmers
+Go программисту
 ------------------
 
-Like Go,
-D is natively compiled.
-However, D has a much richer `feature set <http://dlang.org/comparison.html>`_.
-This means,
-where Go restricts you to carefully chosen selection of features,
-D provides you the lower level building blocks.
-The goroutine is called a
-`fiber <http://dlang.org/phobos/core_thread.html#.Fiber>`_ in D
-and `Vibe.d <http://vibed.org/>`_ is a nice framework around them.
-Likewise,
-a Go channel can be built using primitives from
+Как и Go,
+D нативно компилируемый.
+Однако в D гораздо шире `набор возможностей <http://dlang.org/comparison.html>`_.
+Где Go ограничивает вас тщательно подобранным выбором функций,
+D предоставляет все, вплоть до низкоуровневых строительных блоков.
+``goroutine`` в D называются `fiber <http://dlang.org/phobos/core_thread.html#.Fiber>`_,
+и `Vibe.d <http://vibed.org/>`_ прекрасный фреймворк основанный на них.
+Кроме того,
+Go потоки можно построить, используя примитивы из
 `std.concurrency <http://dlang.org/phobos/std_concurrency.html>`_.
-The structural typing of Go interfaces,
-can be replicated with
+Структурную типизацию Go интерфейсов можно повторить с помощью
 `wrap and unwrap <http://dlang.org/phobos/std_typecons.html#.wrap>`_
-from Ds standard library.
+из стандартной библиотеки D.
 
-Why would you prefer D?
-D supports generic programming,
-which means less code and more type safety.
-D provides a bigger toolbox to choose the right tool for the job.
-Compiling D is as fast as compiling Go.
+Почему вы должны предпочти D?
+D поддерживает шаблонное программирование, что значит
+меньше когда и больше безопасности типов.
+D предоставляет больший набор инструментов для каждой задачи.
+Компиляция в D быстрее чем в Go.
 
-For Python-Ruby-Perl-Javascript-Lua Programmers
-------------------------------------------
+Python-Ruby-Perl-Javascript-Lua программисту
+--------------------------------------------
 
-D is statically typed,
-which probably takes some time to get used to.
-However, D really tries to let you skip boilerplate.
-Declare your variables with ``auto`` or ``const``.
+D статически типизированный язык,
+что займет некоторое время для привыкания.
+Однако D действительно уменьшает необходимость ручного задания типов.
+Объявите переменные с ``auto`` или ``const``.
 
 .. code-block:: d
 
    auto x = 42;
    const y = "yes";
 
-Also there is `Variant <http://dlang.org/phobos/std_variant.html>`_,
-which can be used to put anything into a variable.
+Также существует `Variant <http://dlang.org/phobos/std_variant.html>`_,
+в который можно положить любую переменную.
 
-The D standard library strives to come with all batteries included.
-Unfortunately, D is not as mature as Python.
-While it is possible to be as terse in D,
-often the libraries are missing for small scripting jobs.
-You can use C/C++ libraries,
-but that does not feel like batteries-included.
+Стандартная библиотека D стремится быть как можно более готовой к использованию.
+К сожалению D не так развит как Python.
+Не исключено, что D будет таким же лаконичным, но зачастую не хватает библиотек
+для небольших рабочих сценариев.
+Вы всегда можете использовать C/C++ библиотеки, но вы не будете испытывать чувство
+готовности к использованию, всегда придется немного доделывать.
