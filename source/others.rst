@@ -1,80 +1,75 @@
-Other Languages
+Остальные языки программирования
 ===============
 
-You already know how to program,
-which means you are coming from some other language to D.
-Here is why you might prefer D.
+Считается что вы уже умеете программировать,
+т.е пришли в D из другого языка.
 
-For C Programmers
+C программисту
 -----------------
 
-D has no preprocessor,
-but equivalent meta programming mechanisms.
-Syntactically, lots of C code is actually valid D.
-Some people consider the D compiler a nice C compiler.
+В D вместо препроцессора используется более продвинутый механизм,
+под названием мета программирование.
+Почти весь C код компилируется в D, некоторые даже используют
+D в качестве классного C компилятора.
 
-  I'm writing my C code with DMD.
-  When tested and tweaked I do a final compile with C compiler.
+  Я пишу свой C код на DMD.
+  После отладки и настройки в D, я собираю финальную версию в C компиляторе.
   – `ed <http://forum.dlang.org/post/ibnfbsvxqzjxyfpnzseh@forum.dlang.org>`_
 
-It should be noted that D defines a lot of things,
-which are undefined (or architecture-, implementation-defined) in C.
-For example, integer overflows wrap around in D,
-because that is what practically every architecture today does.
 
-Why would you prefer D?
-The meta programming of D allows higher-level abstractions
-and thus smaller programs.
-D has less pitfalls and is safer,
-thanks to more type safety, less undefined behavior,
-and automatic memory management.
+Стоит отметить, что D добавляет множество вещей, которы не определены (или не
+возможны, трудно реализуемы) в C. Например, обертку для переполнения int'ов
+(integer wraparound), что сейчас практически любая архитектура умеет.
 
-For Java Programmers
+Почему вы должны предпочти D? Мета программирование в D добавляет высоко-
+уровневые абстракции, а значит уменьшает размер исходного кода. В D гораздо
+меньше подводных камней, улучшенная и более безопасная типизация, мало
+непредвиденного поведения и автоматическое управление памятью.
+
+Java программисту
 --------------------
 
-D provides classes, interfaces, modules, packages, and a garbage collector.
-This should make you feel at home quickly.
-Instead of Java Generics, you have D Templates.
+В D есть классы, интерфейсы, модули, пакеты и встроенный сборщик мусора.
+В D вы освоитесь очень быстро и почувствуете себя как дома. 
+Вместо Java шаблонов есть D шаблоны.
 
-Why would you prefer D?
-The meta programming of D allows higher-level abstractions
-and thus smaller programs.
-If CPU or memory is a bottleneck,
-D gives you much more control and room for optimization.
+ 
+Почему вы должны предпочти D? Мета программирование в D добавляет высоко-
+уровневые абстракции, а значит уменьшает размер исходного кода. Для
+чувствительных к ЦПУ или к памяти задач, когда они являются узким местом в
+системе, D дает куда больше контроля и свободы действий для оптимизации.
 
-For C++ Programmers
+
+C++ программисту
 -------------------
 
-You should generally feel at home.
-If you enjoyed the C++11 innovations,
-you will find similar stuff in D.
-D even has things which were dropped from C++11.
-Prepare for some syntax changes, though.
-D is not burdened by C-Syntax-Compatibility.
-However, you can link C and C++ libraries,
-when the header files are ported.
+Вы определенно почувствуете себя тут как дома.
+Если вас впечатляют нововведения C++11,
+вы будете в восторге от D.
+В D даже есть то, чего нет в C++11.
+Однако, придется привыкнуть к немного другому синтаксису.
+D не обременен полной C подобной совместимостью.
+Но можно линковать С и С++ библиотеки, после портирования
+хэдеров.
 
-Why would you prefer D?
-D has much less historical baggage.
-D has less pitfalls and is safer,
-thanks to less undefined behavior,
-and automatic memory management.
+Почему вы должны предпочти D? В D меньший наследственный мусор. Имеет меньше
+подводных камней и безопаснее, благодаря предсказуемому поведению и
+автоматическому управлению памятью.
 
-For C# Programmers
+C# программисту
 ------------------
 
-Lots of similarities and various differences.
-While you should feel at home,
-D does various things different and that will take some time to adopt.
-Instead of a syntax extension like LINQ,
-D provides lots of similar mechanisms in the standard library.
-Instead of ``using``, D provides scope guards.
+Все очень похоже но немного по другому.
+Почувствуете себя как дома, после того как привыкните что сходные вещи делаются
+немного по другому.
+Вместо расширения синтаксиса, типа LINQ,
+D предоставляет множество сходных механизмов из стандартной библиотеки.
+Вместо ``using``, в D есть защиты видимости.
 
-Why would you prefer D?
-D does not require a virtual machine,
-which makes it also suited for embedded jobs.
+Почему вы должны предпочти D? D не нужна виртуальная машина,
+поэтому он годится для встроенных задач.
 
-For Node.js Programmers
+Node.js программисту
 -----------------------
 
 Syntactically, D looks familiar.
