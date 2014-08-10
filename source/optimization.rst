@@ -1,32 +1,29 @@
-Optimization
-============
+Оптимизация
+===========
 
-Use ``dmd -release -inline -O``.
+Попробуйте ``dmd -release -inline -O``.
 
-The dmd compiler does generate good code,
-but it is not in the same league as the more popular compiler backends.
-Hence, for an additional 10-20% performance boost
-(or more for microbenchmarks),
-use LDC or GDC.
-All three compilers use the same frontend,
-but LDC uses LLVM and GDC the GCC backend.
+Dmd компилятор генерирует отличный код,
+но в сравнении не самый популярный движок компиляции.
+Чтобы увеличить производительность на 10-20% (или для микротестов)
+используйте LDC или GDC.
+Все три компилятора используют одинаковый фронтенд,
+но LDC использует LLVM и GDC использует GCC в качестве бекэнда.
 
-Nevertheless, dmd is the reference compiler
-and there are subtle differences as well as shortcomings in LDC and GDC.
-In addition, dmd is very fast,
-which improves development productivity.
 
-Profiling
----------
+Тем не менее, dmd официальный компилятор и поведение
+LDC c GDC немного отличаются от него.
+К тому же dmd довольно быстр, что ускоряет разработку в целом.
 
-Since not every optimization can be performed by a compiler,
-programmers often need to tune their code.
-Since guessing is very often wrong,
-profiling is necessary to find the hot spots in your code.
-Use dmds ``-profile``,
-which instruments the code.
-When the executable is run, a ``trace.log`` is generated.
-It contains data somewhat similar to the following.
+Профилирование
+--------------
+
+Так как компилятор не может все оптимизировать, программист часто должен
+вручную настраивать свой код.
+Трудно предсказать узкие места в коде, а значит необходимо
+пользоваться профилированием.
+Опция ``-profile`` в dmd для этого.
+После запуска программы,  в ``trace.log`` можно найти следующую сходную информацию.
 
 .. code-block:: txt
 
@@ -45,20 +42,19 @@ It contains data somewhat similar to the following.
 
    [... bla bla more data ...]
 
-The table shown above displays the most time consuming functions of the program.
-Apparently, ``writeln`` dominates with a total of 77742 msecs over 2 calls.
-A single call took 38871 msecs on average.
-The ``MessageBox.get`` took a little bit less total time,``
-however the "Tree Time" is 231962 msecs,
-which is the sum of the time of called functions.
+Эта таблица показывает самые прожорливые по времени функции.
+Судя по всему,  ``writeln`` доминирует с суммарным временем 77742 мс за 2 вызова.
+Средний вызов занимает 38871 мс.
+``MessageBox.get`` занимает немного меньше времени,
+однако в дереве времени занимает аж 231962 мс,
+что является суммарным временем с момента вызова и возращения контекста функцией.
 
-Benchmarking
-------------
+Анализ производительности
+-------------------------
 
-When optimizing a certain hotspot,
-benchmarking is essential.
-D comes with ``std.datetime.benchmark`` and ``comparingBenchmark`` included,
-which can be used for simple comparisons.
+Бенчмаркинг естественно необходим для оптимизации узких мест в системе.
+D предоставляет ``std.datetime.benchmark`` и ``comparingBenchmark``
+для простого сравнения производительности.
 
 .. code-block:: d
 
