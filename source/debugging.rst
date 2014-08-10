@@ -1,82 +1,78 @@
-Debugging
+Отладка
 =========
 
-Compile-time Errors
+Compile-time ошибки
 -------------------
 
-Since D is comprehensive language,
-you will probably run into error messages from the compiler.
-Here are some explanations about their meaning.
+Так как D обширный язык,
+вы будете частенько получать ошибки от компилятора.
+Поясню некоторые из них.
 
 Error: T is used as a type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This T thing is not a type, but is used as such.
-Usually, this happens with templates.
-A template is not a type.
-You probably must instantiate T like `T!int` to fix the error.
+Здесь T не является типом, но пытается его так использовать.
+Шаблон не есть тип.
+Вероятно вы должны применить T вроде `T!int`, чтобы исправить ошибку.
 
-Run-time Errors
+Run-time ошибки
 ---------------
 
-Run-time errors mean that the compiled program
-does not behave like intended.
+Run-time ошибки возникают когда скомпилированная программа,
+ведет себя как не задумывалось.
 
 Stack-traces
 ^^^^^^^^^^^^
 
-D has exceptions and you get a stack trace,
-if an exception is not caught.
-Of course, being a system language,
-you can break the type system for arbitrary effects,
-but most parts of the language are safe
-and you should get good error message.
+В D есть исключения от которых можно получить
+stack trace если они не обработаны.
+Конечно, будучи системным языком,
+вы можете сломать систему типов, что приведет к тихому падению,
+но большая часть языка безопасна и вы получите подробное сообщение об ошибке.
 
 
-Printf Debugging
+Printf отладка
 ^^^^^^^^^^^^^^^^
 
-The easiest way to debug the code
-is insert print commands everywhere.
-From C this is called "printf debugging",
-although it is "writeln debugging" in D.
+Самый простой способ отладки, это расставить
+команды с сообщениями повсюду в коде.
+В C это называют "printf отладкой", а в
+D называют "writeln отладкой".
 
-There is the ``debug`` keyword together with the the ``-debug`` compiler switch.
-You can disable your print commands with this switch
-without deleting them.
-Consider the following code snippet.
+Существует ключевое слово ``debug`` вместе с опцией ``-debug`` компилятора.
+С ней вы можете отключать печатающие команды, не удаляя при этом их из кода.
+Рассмотрим следующий кусок кода.
+
 
 .. code-block:: d
 
    writeln("Hello");
    debug writeln("World");
 
-If compiled without ``-debug``,
-it will print only "Hello".
-However, compiled with ``-debug``,
-it will also print "World".
+Если скомпилировать без ``-debug``,
+получите только "Hello".
+Однако с ``-debug`` вы также получите "World".
 
 .. warning::
 
-   Be careful not to put necessary code into debug,
-   otherwise your release build might behave differently.
+   Не оставляйте важный код в дебаг версии, так
+   как в релизную версию он не попадает.
 
-Useful (and probably necessary) is the ``text`` function
-from `std.conv <http://dlang.org/phobos/std_conv.html>`_,
-which converts anything to a string.
+Полезно (и местами необходимо) использовать ``text`` функцию
+из `std.conv <http://dlang.org/phobos/std_conv.html>`_,
+которая переводит все что угода в строку.
 
-Logging
-^^^^^^^
+Журналирование
+^^^^^^^^^^^^^^
 
-Unfortunately, there is no logging module in the standard library so far.
+К сожалению в стандартной библиотеке пока нет модуля для логирования.
 
-Debugger
+Отладчик
 ^^^^^^^^
 
-The dmd compiler provides the ``-g`` switch,
-which enables you to use gdb or whatever debugger you like.
-The debugger should then know about names,
-variable values, etc.
+У dmd компилятора есть опция ``-g``,
+которая разрешает использовать gdb или любой другой отладчик.
+Отладчик может узнать об именах, значениях переменных и т. д.
 
 .. seealso::
 
