@@ -1,51 +1,47 @@
 .. _documentation:
 
-Documentation
-=============
+Документация
+============
 
-As a programmer, you are probably used to API documentations,
-like JavaDoc or DoxyGen.
-The D compiler has this Ddoc functionality built in with the ``-D`` switch.
+Бучи программистов вы наверняка используете документации к API,
+вроде JavaDoc или DoxyGen.
+D компилятор имеет встроенный Ddoc функционал с опцией ``-D``.
 
-Ddoc Examples
+Ddoc примеры
 -------------
 
-For Ddoc comments normal comments must be extended with one more character.
-For example ``/* */`` becomes ``/** */``.
-The normal comments are ignored by the documentation generator.
-Since API documentation of functions is probably the most important use case,
-here is an example.
+Документирующие комментарии в Ddoc обрамляются одним дополнительным комментирующим знаком.
+Например для  ``/* */`` будет ``/** */``.
+Обычные комментарии  игнорируются генератором.
+Так как документация к функциям самая важная, вот пример.
 
 .. literalinclude:: ../examplecode/ddoc_example.d
    :language: d
 
-Ddoc also comes with a simple macro language
-for advanced purposes.
-It can be used as a markup language for longer explanations.
-However, it is also used to generate most of the D website, for example.
+Также ddoc имеет простые макросы для дополнительных целей.
+Их используют для отметки кусков текста в длинных пояснениях.
+Более того, большая часть D сайта сгенерирована из комментариев исходного кода.
 
-Put the example above into ``foo.d``,
-then ``dmd -D foo.d`` will generate a ``foo.html`` file with API documentation.
-This is pretty raw, though.
-For some nice looking documentation,
-you have to extend the basic Ddoc templates.
-Alternatively, the macros can be overriden to produce XML
-or any other format.
+Запишем предыдущий пример в ``foo.d``,
+затем  ``dmd -D foo.d`` сгенерирует ``foo.html`` файл с документацией к нему.
+Сейчас она выглядит сыровато.
+Для улучшения внешнего вида, можно расширить стандартный Ddoc шаблон.
+Также макросы можно переопределить в генерацию XML или любого другого формата.
 
-Beautiful API Documentation
----------------------------
 
-If you need a more refined tool to produce API documenation for your project,
-then check out `ddox <https://github.com/rejectedsoftware/ddox>`_.
+Улучшения
+---------
 
-Unittest as Examples
---------------------
+Если нужен продвинутый механизм для генерации документации,
+попробуйте `ddox <https://github.com/rejectedsoftware/ddox>`_.
 
-Unittests with comments also show up in the documentation.
-They serve as examples.
-In contrast to examples within the doc-comment,
-these examples are executed as part of the testing process,
-which means they are actually checked for errors.
+Unittest в качестве примеров
+----------------------------
+
+Юниттесты с комментариями также показываются в документации.
+Они служат в качестве примеров.
+В отличие от примеров в документации, эти служат еще и частью
+тестирования, а значит они проверяются на ошибки.
 
 .. literalinclude:: ../examplecode/unittestexample.d
    :language: d
