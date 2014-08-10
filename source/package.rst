@@ -1,27 +1,24 @@
-Packaging
-=========
+Пакеты
+======
 
-Dub seems to be the primary candidate for a canonical package manager.
-It requires a simple JSON document ``package.json`` describing the project
-and expects a certain structure.
+Видимо dub станет основным кандитатом на каноничный менеджер пакетов для D.
+Ему необходим простой JSON документ заданной структуры ``package.json`` для описания проекта.
 
-* source code is in the ``source`` or ``src`` subdirectory
-* main is in ``app.d`` or ``<package name>.d``
-* string imports are in the ``views`` subdirectory
+* исходный код должен лежать в подпапке ``source`` или ``src``
+* main должен быть в ``app.d`` или ``<package name>.d``
+* строковый импорт в ``views``.
 
-The main code repository is hosted on
-`code.dlang.org <http://code.dlang.org/download>`_.
-This is D's not quite official equivalent to CPAN, PyPI, RubyGems, NPM, etc.
-There you can also find `downloads <http://code.dlang.org/download>`_.
+Главное хранилище кода хостится на `code.dlang.org <http://code.dlang.org/>`_.
+Это практически официальный аналог к PAN, PyPI, RubyGems, NPM, и т. д.
+Загрузить dub вы можете `тут <http://code.dlang.org/download>`_.
 
-Dub Example
------------
+Dub пример
+----------
 
-For a usage example, let us look at `DDox <https://github.com/rejectedsoftware/ddox>`_,
-a nice documentation generator,
-which is a little bit more sophisticated than the builtin version.
-Assuming you have dub installed,
-this is how you can get ddox.
+В качестве примера рассмотрим `DDox <https://github.com/rejectedsoftware/ddox>`_,
+отличный генератор документации,
+который немного сложнее чем встроенный.
+Если dub установлен, то вот так вы можете получить ddox.
 
 .. code-block:: sh
 
@@ -29,13 +26,13 @@ this is how you can get ddox.
    cd ddox
    dub build
 
-After getting the source from Github,
-the ``dub build`` command
-fetches all Dub dependencies (vibe.d, libevent, libev, openssl)
-and builds the application.
-However, on Linux the lib* Dub packages only contain the bindings,
-this means it assumes the libraries are installed on the system,
-otherwise you will get linker errors.
+После загрузки кода из гитхаба,
+комманда ``dub build``
+проверит и установит все dub зависимости (vibe.d, libevent, libev, openssl)
+и соберет ddox.
+Однако, под Linux lib* dub пакеты содержат только байндинги,
+недостающие библиотеки придется установить вручную, чтобы не получить
+ошибок линковки.
 
 .. seealso::
 
